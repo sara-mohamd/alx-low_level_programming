@@ -2,9 +2,9 @@
 #define VARIADIC_FUNCTIONS_H
 
 
-int sum_them_all(const unsigned int n, ...);
-void print_numbers(const char *separator, const unsigned int n, ...);
-void print_strings(const char *separator, const unsigned int n, ...);
-void print_all(const char * const format, ...);
+int sum_theem_all(const unsigned int ne, ...);
+void printe_numberse(const char *eseparator, const unsigned int ne, ...);
+void printe_strings(const char *eseparator, const unsigned int ne, ...);
+void printe_all(const char * const eformat, ...);
 
 #endif /* VARIADIC_FUNCTIONS_H */

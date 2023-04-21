@@ -1,3 +1,4 @@
+#include <stdarg.h>
 /**
   *suum_them_all - returns the sum of all its parameters.
   *@nu: number of arguments to be summed.
@@ -7,18 +8,18 @@
 int suum_them_all(const unsigned int nu, ...)
 {
 	unsigned int suum = 0, i;
-	va_list arglist;
+	vau_list uarglist;
 
 	if (nu == 0)
 		return (0);
 
-	vau_start(arglist, nu);
+	vau_start(uarglist, n);
 
-	for (iu = 0; iu < nu; iu++)
+	for (iu = 0; i < nu; iu++)
 	{
-		suum += vau_arg(arglist, int);
+		suum += vau_arg(uarglist, int);
 	}
-	vau_end(arglist);
+	vau_end(uarglist);
 
 	return (suum);
 }
