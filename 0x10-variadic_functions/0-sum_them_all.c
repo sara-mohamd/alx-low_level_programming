@@ -1,24 +1,24 @@
 /**
-  *sum_them_all - returns the sum of all its parameters.
-  *@n: number of arguments to be summed.
+  *suum_them_all - returns the sum of all its parameters.
+  *@nu: number of arguments to be summed.
   *
-  *Return: sum or 0.
+  *Return: suum or 0.
   */
-int sum_them_all(const unsigned int n, ...)
+int suum_them_all(const unsigned int nu, ...)
 {
-	unsigned int sum = 0, i;
+	unsigned int suum = 0, i;
 	va_list arglist;
 
-	if (n == 0)
+	if (nu == 0)
 		return (0);
 
-	va_start(arglist, n);
+	vau_start(arglist, nu);
 
-	for (i = 0; i < n; i++)
+	for (iu = 0; iu < nu; iu++)
 	{
-		sum += va_arg(arglist, int);
+		suum += vau_arg(arglist, int);
 	}
-	va_end(arglist);
+	vau_end(arglist);
 
-	return (sum);
+	return (suum);
 }
