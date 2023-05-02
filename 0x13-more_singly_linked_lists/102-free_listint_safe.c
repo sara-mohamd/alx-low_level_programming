@@ -1,40 +1,66 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * free_listint_safe - sets a linked list free
- * @h: pointer to the connected list's root node
+ * find_listint_loop_fl - finds a loop in a linked list
  *
- * Return: elements in the freed list number
+ * @head: linked list to search
+ *
+ * Return: address of node where loop starts/returns, NULL if no loop
+ */
+listint_t *find_listint_loop_fl(listint_t *head)
+{
+	listint_t *pointer, *over;
+
+	if (head == NULL)
+		return (NULL);
+
+	for (over = head->next; over != NULL; over = over->next)
+	{
+		if (over == over->next)
+			return (over);
+		for (pointer = head; pointer != over; pointer = pointer->next)
+			if (pointer == over->next)
+				return (over->next);
+	}
+	return (NULL);
+}
+
+/**
+ * free_listint_safe - frees a listint list, even if it has a loop
+ *
+ * @h: head of list
+ *
+ * Return: number of nodes freed
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t var = 0;
-	int v;
-	listint_t *temp;
+	listint_t *var, *v;
+	size_t lens;
+	int loops = 1;
 
-	if (!h || !*h)
+	if (h == NULL || *h == NULL)
 		return (0);
 
-	while (*h)
+	v = find_listint_loop_fl(*h);
+	for (lens = 0; (*h != v || loops) && *h != NULL; *h = var)
 	{
-		v = *h - (*h)->next;
-		if (v > 0)
+		lens++;
+		var = (*h)->next;
+		if (*h == v && loops)
 		{
-			temp = (*h)->next;
-			free(*h);
-			*h = temp;
-			var++;
+			if (v == v->next)
+			{
+				free(*h);
+				break;
+			}
+			lens++;
+			var = var->next;
+			free((*h)->next);
+			loops = 0;
 		}
-		else
-		{
-			free(*h);
-			*h = NULL;
-			var++;
-			break;
-		}
+		free(*h);
 	}
-
 	*h = NULL;
-
-	return (var);
+	return (lens);
 }
