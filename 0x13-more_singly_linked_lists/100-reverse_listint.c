@@ -2,7 +2,7 @@
 
 /**
  * reverse_listint - reverses an int list
- * @head: address of pointer to first node
+ * @head: address of pointer to first var
  *
  * Return: address of head
  */
@@ -15,7 +15,7 @@ listint_t *reverse_listint(listint_t **head)
 
 	var = *head;
 	*head = NULL;
-	while (node)
+	while (var)
 	{
 		next = var->next;
 		var->next = *head;
