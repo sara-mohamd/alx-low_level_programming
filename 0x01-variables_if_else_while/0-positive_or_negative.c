@@ -14,13 +14,13 @@
 int main(void)
 {
 	long int n;
-scanf("%d", &n);
+scanf("%li", &n);
 if (n > 0)
-printf("%d is positive", n);
+printf("%li is positive", n);
 else if (n < 0)
-printf("%d is negative", n);
+printf("%li is negative", n);
 else
-printf("%d is zero", n);
+printf("%li is zero", n);
 srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
