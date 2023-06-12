@@ -1,32 +1,28 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
+
 /**
- * main - This program will assign a random number
- * to the variable n each time it is executed
+ * main - Determine if the number  positive or either
  *
- * Description: using the main function
- * this program prints "Programming is positive, zero, or negtive
+ * to the variable each time it executed
+ *
+ * Description : using main function
  * Return: 0
- */
+*/
+
 int main(void)
 {
-int n;
-
-srand(time(0));
-n = rand() - RAND_MAX / 2;
-/* your code goes there */
+	int n;
+scanf("%d", &n);
 if (n > 0)
-{
-	printf("%i is positive\n", n);
-}
-else if (n == 0)
-{
-	printf("%i is zero\n", n);
-}
+printf("is positive");
 else if (n < 0)
-{
-	printf("%i is negative\n", n);
-}
-return (0);
+printf("is negative");
+else
+printf("is zero");
+srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	/* your code goes there */
+	return (0);
 }
