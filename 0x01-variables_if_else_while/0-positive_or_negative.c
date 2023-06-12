@@ -13,8 +13,6 @@
 
 int main(void)
 {
-srand(time(0));
-	n = rand() - RAND_MAX / 2;
 	long int n;
 scanf("%li", &n);
 if (n > 0)
