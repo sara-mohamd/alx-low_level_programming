@@ -13,6 +13,8 @@
 
 int main(void)
 {
+srand(time(0));
+	n = rand() - RAND_MAX / 2;
 	long int n;
 scanf("%li", &n);
 if (n > 0)
@@ -21,8 +23,6 @@ else if (n < 0)
 printf("%li is negative", n);
 else
 printf("%li is zero", n);
-srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
+
 	return (0);
 }
