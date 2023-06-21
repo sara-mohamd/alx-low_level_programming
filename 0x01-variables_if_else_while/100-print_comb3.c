@@ -17,11 +17,11 @@ if (j > x)
 {
 putchar('0' + x);
 putchar('0' + j);
-}
-if (j != 9 && x != 8)
+if (j != 9 || x != 8)
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
