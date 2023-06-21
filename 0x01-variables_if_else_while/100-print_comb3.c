@@ -8,9 +8,10 @@
 */
 int main(void)
 {
-for (int x = 0; x < 9; x++)
+int x, j;
+for (x = 0; x < 9; x++)
 {
-for (int j = 1; j <= 9; j++)
+for (j = 1; j <= 9; j++)
 {
 if (j > x)
 {
