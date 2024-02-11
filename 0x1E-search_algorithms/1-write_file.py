@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 1"""
+""" Task 1 """
 
 
 def write_file(filename="", text=""):
